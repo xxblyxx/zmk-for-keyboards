@@ -44,15 +44,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-// |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-// |EXTPWR |     |     |      |      |  mute|        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
+// |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  [   |   ]   |   ~   |
+// |EXPWRON|EXPWROF|EXPWRTG|  |      |  mute|   [    |  |   ]   |      |  _    |  +    |  {   |   }   |  "|"  |
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
 &bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans    &trans    &trans
 &kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp ASTRK &kp LBKT  &kp RBKT  &kp TILDE
-&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &kp C_MUTE    &trans   &trans  &trans      &kp MINUS &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
-                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+&ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans &trans &kp C_MUTE &kp LBKT       &kp RBKT   &trans    &kp MINUS &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+                                              &trans            &trans       &trans        &trans   &trans    &trans    &trans    &trans
             >;
 
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -63,13 +63,13 @@
 // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |  del  |
 // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      | pgup |  up   | home |       |       |
 // |        | RGB_BRD | RGB_BRI |         |         | RGB_TOG |                  |      | left |  down | right|       |       |
-// |        |         |         |         |         |         |         | |      |      | pgdn |       | end  |       |       |
+// |        |         |         |         |         |         |    {    | |  }   |      | pgdn |       | end  |       |       |
 //                    |         |         |         |         |         | |      |      |      |       |      
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &trans &trans &trans &trans &trans &kp DEL
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &trans &kp PG_UP &kp UP &kp HOME &trans &trans
-&trans             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans           &trans           &rgb_ug RGB_TOG                      &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-&trans             &trans           &trans           &trans           &trans           &trans   &trans          &trans    &trans &kp PG_DN &trans &kp END      &trans &trans
+&trans   &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans   &trans           &rgb_ug RGB_TOG                      &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans   &trans  &trans  &trans  &trans  &trans   &kp LBRC           &kp RBRC    &trans &kp PG_DN &trans &kp END      &trans &trans
                                               &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
